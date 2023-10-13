@@ -1,0 +1,59 @@
+<div class="modal" aria-hidden="true" tabindex="-1" id="filter">
+  <div id="user-filter" class="modal-lg modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Filtrar Usuários</h4>
+      </div>
+
+      <div class="modal-body form-container">
+        <%= form_with(model: @user, html: { class: 'needs-validation' }, method: :get) do |form| %>
+           <div class="mb-3 row">
+                <%= form.label :id, 'ID', class: 'col-sm-4 col-form-label' %>
+                <div class="col-sm-8">
+                    <%= form.text_field :id, class: 'form-control', placeholder: '1', required: false %>
+                </div>
+          </div>
+          
+          <div class="mb-3 row">
+              <%= form.label :name, 'Nome Completo', class: 'col-sm-4 col-form-label' %>
+              <div class="col-sm-8">
+                <%= form.text_field :name, class: 'form-control', placeholder: 'Nome Sobrenome', required: false %>
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <%= form.label :email, 'Email', class: 'col-sm-4 col-form-label' %>
+              <div class="col-sm-8">
+                <%= form.text_field :email, class: 'form-control', placeholder: 'email@email.com', required: false %>
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <%= form.label :phone, 'Número de Telefone', class: 'col-sm-4 col-form-label' %>
+              <div class="col-sm-8">
+                <%= form.text_field :phone, class: 'form-control', placeholder: '(00) 9 0000-0000', required: false %>
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <%= form.label :cpf, 'CPF', class: 'col-sm-4 col-form-label' %>
+              <div class="col-sm-8">
+                <%= form.text_field :cpf, class: 'form-control', placeholder: '000.000.000-00', required: false %>
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+            <div class="col-sm-4">
+              <%= form.submit "Filtrar", class: 'btn btn-block' %>
+            </div>
+
+            <div class="col-sm-4">
+              <%= form.button 'Limpar Filtros', method: :get, class: 'btn btn-block' %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</div>

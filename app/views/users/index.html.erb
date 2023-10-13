@@ -1,0 +1,50 @@
+<h3>Lista de Usuários</h3>
+
+<div class="container-right">
+  <button class="btn btn-larger" data-bs-toggle="modal" data-bs-target="#modal">
+    <i class="bi bi-person-plus-fill"></i>
+    Adicionar Usuário
+  </button>
+
+  <button class="btn btn-icon" data-bs-toggle="modal" data-bs-target="#filter">
+    <i class="bi bi-funnel"></i>
+  </button>
+</div>
+
+<div id="users">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">CPF</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @users.present? %>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.cpf %></td>            
+            <td><%= button_to "", user_path(user), method: :delete, class: "bi bi-trash3-fill list-icon btn-icon-nocolor" %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td scope="row">Nenhum usuário cadastrado</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>  
+</div>
+
+<%= render 'modal' %>
+<%= render 'filter' %>
+<%= render 'alert' %>
