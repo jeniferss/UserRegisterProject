@@ -33,6 +33,5 @@ $ git clone git@github.com:jeniferss/UserRegisterProject.git
 ***
 
 ```bash
-$ cd user_register_project
 $ rails s
 ```
