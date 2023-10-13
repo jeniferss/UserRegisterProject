@@ -33,5 +33,6 @@ $ git clone git@github.com:jeniferss/UserRegisterProject.git
 ***
 
 ```bash
+$ rails db:migrate
 $ rails s
 ```
